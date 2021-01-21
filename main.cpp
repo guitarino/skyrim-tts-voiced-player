@@ -302,7 +302,7 @@ public:
 VMResultArray<BSFixedString> getAvailableTTSVoices(StaticFunctionTag*) {
 	vector<ISpObjectToken*> voices = getVoices(); // We can't just use `gVoices` because it's on another thread
 	VMResultArray<BSFixedString> vmVoiceList;
-	WCHAR* szDesc;
+	WCHAR* szDesc = 0L;
 	const char* szDescString;
 
 	UInt32 size = voices.size();
